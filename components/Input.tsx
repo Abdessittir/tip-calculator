@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { ChangeEvent, useState } from 'react';
 
+import styles from '../styles/Input.module.css';
+
 interface Options {
   type: string,
   label: string,
@@ -26,13 +28,14 @@ const Input = (
   };
 
   return (
-    <div>
+    <div className={styles.input_container}>
       <label htmlFor={options.label}>{options.label}</label>
       {invalid && <p>Can't be zero</p>}
       <Image
+        className={styles.icon}
         src={options.iconUrl}
-        width="20"
-        height="20"
+        width="13"
+        height="16"
         alt={options.label}
       />
       <input

@@ -1,0 +1,47 @@
+@media (min-width: 375px) {
+  .input_container {
+    position: relative;
+    background-color: hsl(189, 41%, 97%);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    margin: 30px auto;
+  }
+
+  .input_container label {
+    position: absolute;
+    top: -25px;
+    left: 0px;
+    color: hsl(184, 14%, 56%);
+  }
+
+  .input_container input {
+    background-color: transparent;
+    width: 100%;
+    text-align: right;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    font-size: 24px;
+    color: hsl(183, 100%, 15%);
+    transition: 0.2s;
+    border-radius: 5px;
+  }
+
+  .input_container input:focus {
+    border: 1px solid hsl(172, 67%, 45%);
+    cursor: pointer;
+    padding: 6px 16px;
+  }
+
+  .input_container .icon {
+    position: absolute;
+    left: 5px;
+  }
+}
+
+@media (min-width: 763px) {
+  .input_container {
+    margin: 15px auto;
+  }
+}

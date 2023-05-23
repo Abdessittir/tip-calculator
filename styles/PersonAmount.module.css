@@ -1,0 +1,22 @@
+@media (min-width: 375px) {
+  .result_card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px auto;
+  }
+
+  .amount_type {
+    color: hsl(0, 0%, 100%);
+    font-size: 15px;
+  }
+
+  .amount {
+    color: hsl(184, 14%, 56%);
+    font-size: 14px;
+  }
+
+  .result_card h2 {
+    color: hsl(172, 67%, 45%);
+  }
+}
