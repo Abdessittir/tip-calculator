@@ -25,7 +25,8 @@
 }
 
 @media (min-width: 763px) {
-  .custom  {
+  .custom,
+  .input {
     width: 32%;
   }
 }
