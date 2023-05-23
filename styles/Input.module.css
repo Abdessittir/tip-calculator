@@ -38,6 +38,17 @@
     position: absolute;
     left: 5px;
   }
+
+  .invalid {
+    color: red;
+    position: absolute;
+    right: 0;
+    top: -25px;
+  }
+
+  .input_container .invalid_input {
+    border: 1px solid red !important;
+  }
 }
 
 @media (min-width: 763px) {

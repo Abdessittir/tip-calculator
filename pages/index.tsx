@@ -7,6 +7,7 @@ import styles from '@/styles/Home.module.css';
 import Input from '@/components/Input'
 import PersonAmount from '@/components/PersonAmount';
 import TipButton from '@/components/TipButton';
+import CustomTip from '@/components/CustomTip';
 
 export default function Home() {
   const [state, setState] = useState({
@@ -24,6 +25,17 @@ export default function Home() {
       ...prev,
       [field]: value,
     }));
+  };
+
+  const reset = () => {
+    setState({
+      bill: 0,
+      numberOfPeaple: 0,
+      selectedTip: 0,
+      tipAmount: 0,
+      total: 0,
+    });
+    window.dispatchEvent(new CustomEvent('clear_inputs'));
   };
 
   useEffect(() => {
@@ -78,10 +90,15 @@ export default function Home() {
                     setTip={
                       (value: number) => setState((prev) => ({ ...prev, selectedTip: value }))
                     }
+                    seleted={state.selectedTip}
                   />
                 ))
               }
-              <button>Custom</button>
+              <CustomTip
+                setTip={
+                  (value: number) => setState((prev) => ({ ...prev, selectedTip: value }))
+                }
+              />
             </div>
 
             <Input
@@ -96,7 +113,13 @@ export default function Home() {
           <section className={styles.results_container}>
             <PersonAmount amountType="Tip Amount" amount={state.tipAmount} />
             <PersonAmount amountType="Total" amount={state.total} />
-            <button className={styles.reset_button}>RESET</button>
+            <button
+              onClick={reset}
+              className={styles.reset_button}
+              disabled={!state.tipAmount || !state.total}
+            >
+              RESET
+            </button>
           </section>
         </div>
       </main>

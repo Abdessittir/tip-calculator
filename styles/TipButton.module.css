@@ -1,5 +1,6 @@
 @media (min-width: 375px) {
-  .tip_button {
+  .tip_button,
+  .selected_button {
     color: hsl(0, 0%, 100%);
     background-color: hsl(183, 100%, 15%);
     border: none;
@@ -15,9 +16,14 @@
     background-color: hsl(185, 41%, 84%);
     color: hsl(183, 100%, 15%);
   }
+
+  .selected_button {
+    color: hsl(172, 67%, 45%);
+    background-color: hsl(183, 100%, 15%);
+  }
 }
 
-@media (min-width: 375px) {
+@media (min-width: 763px) {
   .tip_button {
     width: 32%;
   }

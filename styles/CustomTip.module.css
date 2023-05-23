@@ -1,0 +1,31 @@
+@media (min-width: 375px) {
+  .custom,
+  .input {
+    width: 45%;
+    background-color: hsl(189, 41%, 97%);
+    border: none;
+    outline: none;
+    width: 45%;
+    border-radius: 5px;
+    font-size: 17px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .input {
+    text-align: right;
+    display: none;
+  }
+
+  .input:focus {
+    border: 1px solid hsl(172, 67%, 45%);
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 763px) {
+  .custom  {
+    width: 32%;
+  }
+}
