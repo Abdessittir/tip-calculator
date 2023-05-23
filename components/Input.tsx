@@ -44,7 +44,7 @@ const Input = (
   return (
     <div className={styles.input_container}>
       <label htmlFor={options.label}>{options.label}</label>
-      {invalid && <p className={styles.invalid}>Can't be zero or less</p>}
+      {invalid && <p className={styles.invalid}>Can&apos;t be zero or less</p>}
       <Image
         className={styles.icon}
         src={options.iconUrl}
