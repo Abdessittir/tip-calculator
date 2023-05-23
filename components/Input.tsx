@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ChangeEvent, Ref, useEffect, useRef, useState } from 'react';
+import { Ref, useEffect, useRef, useState } from 'react';
 
 import styles from '../styles/Input.module.css';
 
@@ -9,15 +9,27 @@ interface Options {
   iconUrl: string,
 };
 
-type LegacyRef<T> = Ref<T>;
+interface RefType {
+  current: {
+    value: undefined
+  }
+}
+
+interface EventType {
+  target: {
+    value: string
+  }
+}
+
+type LegacyRef<T> = Ref<HTMLInputElement>;
 
 const Input = (
   {options, changeState}: {options: Options, changeState: any}
 ) => {
 
   const [invalid, setInvalid] = useState(false);
-  const inputRef = useRef() as LegacyRef<HTMLInputElement>;
-  const handleChange = (event: ChangeEvent) => {
+  const inputRef = useRef() as RefType;
+  const handleChange = (event: EventType) => {
     const value = parseFloat(event.target.value);
     const field = options.label === 'Bill'? 'bill': 'numberOfPeaple';
 
@@ -54,7 +66,7 @@ const Input = (
       />
       <input
       className={invalid ? styles.invalid_input: styles.valid_input}
-        ref={inputRef}
+        ref={inputRef as unknown as LegacyRef<HTMLInputElement>}
         type={options.type}
         placeholder="0"
         name={options.label}
