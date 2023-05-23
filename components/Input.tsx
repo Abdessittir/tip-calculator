@@ -65,7 +65,7 @@ const Input = (
         alt={options.label}
       />
       <input
-      className={invalid ? styles.invalid_input: styles.valid_input}
+        className={invalid ? styles.invalid_input: styles.valid_input}
         ref={inputRef as unknown as LegacyRef<HTMLInputElement>}
         type={options.type}
         placeholder="0"
